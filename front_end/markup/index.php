@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="../style/main_page.css">
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/navbar.css">
+    <script>
+    function redirect(){window.location.href = "edit_page.php";}
+    </script>
 </head>
 
 <body>
     <header>
         <h1>Title</h1>
-        <button class="edit-button">Edit</button>
+        <button class="edit-button" onclick="redirect()">Edit</button>
     </header>
     <?php
      require_once "../../back_end/data-base-handler.inc.php";

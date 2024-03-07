@@ -3,6 +3,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $itemContent = $_POST["content"];
+    //$confidenceLevel = $_POST["confidence-level"];
 
     try{
         require_once "data-base-handler.inc.php";

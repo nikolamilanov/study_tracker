@@ -21,9 +21,8 @@
         <button class="edit-button" onclick="redirect()">Home</button>
     </header>
     <?php 
-    // Include your database configuration file
 require_once "../../back_end/data-base-handler.inc.php";
-// Write SQL to get data from the database
+
 $sql1 = "SELECT * FROM items";
 $stmt1 = $pdo->prepare($sql1);
 $stmt1->execute();
@@ -35,42 +34,53 @@ $sql2 = "SELECT * FROM items";
 $stmt2 = $pdo->prepare($sql2);
 $stmt2->execute();
 
-// set the resulting array to associative
 $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
     ?>
     <form class="create-form" method="post" action="../../back_end/create-form-handler.inc.php">
         <label for="content">Add</label><br>
         <input type="text" name="content" id="content"><br>
-        <!--
+        
         <select name ="confidence_level" id="confidence-level">
             <option value ="low">Low</option>
             <option value ="medium">Medium</option>
             <option value ="high">High</option>
 
-        </select> -->
+        </select> 
 
         <input type="submit">
     </form>
-   <form class="update-form" method="post" action="../../back_end/update-form-handler.inc.php">
+    <form class="update-form" method="post" action="../../back_end/update-form-handler.inc.php">
         <h2>Update</h2>
 
         <select name="item_id" id="item_id">
-        <?php
+            <?php
         foreach(new RecursiveArrayIterator($stmt1->fetchAll()) as $k=>$v) {
             echo "<option value='" . $v['id'] . "'>" . $v['id'] ."</option>";
         }
-        ?> 
+        ?>
         </select><br>
         <label for="content">Add</label><br>
-        <!--<select name ="confidence_level" id="confidence-level">
+        <select name ="confidence_level" id="confidence-level">
             <option value ="low">Low</option>
             <option value ="medium">Medium</option>
             <option value ="high">High</option>
 
-        </select> <br> -->
+        </select> <br> 
         <input type="text" name="content" id="content"><br>
         <input type="submit">
-    </form> 
+    </form>
+    <form class="update-form" method="post" action="../../back_end/delete-form-handler.inc.php">
+        <h2>Delete</h2>
+
+        <select name="item_id" id="item_id">
+            <?php
+        foreach(new RecursiveArrayIterator($stmt2->fetchAll()) as $k=>$v) {
+            echo "<option value='" . $v['id'] . "'>" . $v['id'] ."</option>";
+        }
+        ?>
+        </select><br>
+        <input type="submit">
+    </form>
 </body>
 
 </html>

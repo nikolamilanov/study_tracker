@@ -4,16 +4,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $itemId = $_POST["item_id"];
     $itemContent = $_POST["content"];
-    //$confidenceLevel = $_POST["confidence-level"];
+    $confidenceLevel = $_POST["confidence-level"];
 
     try{
         require_once "data-base-handler.inc.php";
 
-        $sql = " UPDATE items SET content = ? WHERE id = ?;";
+        $sql = " UPDATE items SET content = ?, confidence_level = ? WHERE id = ?;";
 
         $stmt = $pdo->prepare($sql);
 
-        $stmt->execute([$itemContent,$itemId]);
+        $stmt->execute([$itemContent, $confidenceLevel, $itemId]);
 
         $pdo = null;
         $stmt = null;

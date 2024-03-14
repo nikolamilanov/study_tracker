@@ -37,21 +37,25 @@ $stmt2->execute();
 $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
     ?>
     <form class="create-form" method="post" action="../../back_end/create-form-handler.inc.php">
-        <label for="content">Add</label><br>
+        <h2>Create</h2>
+
+        <label for="content">Content</label><br>
         <input type="text" name="content" id="content"><br>
-        
-        <select name ="confidence_level" id="confidence-level">
-            <option value ="low">Low</option>
-            <option value ="medium">Medium</option>
-            <option value ="high">High</option>
 
-        </select> 
+        <label for="confidence-level">Confidence level</label><br>
+        <select name="confidence-level" id="confidence-level">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
 
+        <label for=""></label><br>
         <input type="submit">
     </form>
     <form class="update-form" method="post" action="../../back_end/update-form-handler.inc.php">
         <h2>Update</h2>
 
+        <label for="item_id">ID</label><br>
         <select name="item_id" id="item_id">
             <?php
         foreach(new RecursiveArrayIterator($stmt1->fetchAll()) as $k=>$v) {
@@ -59,19 +63,22 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
         }
         ?>
         </select><br>
-        <label for="content">Add</label><br>
-        <select name ="confidence_level" id="confidence-level">
-            <option value ="low">Low</option>
-            <option value ="medium">Medium</option>
-            <option value ="high">High</option>
+        <label for="confidence-level">Confidence level</label><br>
+        <select name="confidence-level" id="confidence-level">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select> <br>
 
-        </select> <br> 
+        <label for="content">Content</label><br>
         <input type="text" name="content" id="content"><br>
+
         <input type="submit">
     </form>
-    <form class="update-form" method="post" action="../../back_end/delete-form-handler.inc.php">
+    <form class="delete-form" method="post" action="../../back_end/delete-form-handler.inc.php">
         <h2>Delete</h2>
 
+        <label for="item_id">ID</label><br>
         <select name="item_id" id="item_id">
             <?php
         foreach(new RecursiveArrayIterator($stmt2->fetchAll()) as $k=>$v) {
@@ -79,6 +86,7 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
         }
         ?>
         </select><br>
+
         <input type="submit">
     </form>
 </body>

@@ -2,18 +2,22 @@
 body{
     background-color: #6d6d6d;
 }
-.create-form{
+.create-form, .update-form, .delete-form{
     background-color: #302d2d;
     width: 20%;
     height: 200px;
     margin: 50px auto;
     border-radius: 20px;
 }
-.create-form input{
+input{
     width: 80%;
     margin: 10px 10% 0 10%;
 }
-.create-form label {
+select{
+    width: 80%;
+    margin: 10px 10% 0 10%;
+}
+h2 {
     color: white;
     width: 80%;
     margin: 10px 10% 0 10%;

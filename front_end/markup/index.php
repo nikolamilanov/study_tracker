@@ -31,7 +31,21 @@
     <main>
         <?php
         foreach ($data as $display){
-            echo "<div class='item-wrapper'><p class='item-content'>" .$display['content'] . "</p></div>";
+            $confidence_class = '';
+            switch ($display['confidence_level']) {
+                case 'high':
+                    $confidence_class = 'high-confidence';
+                    break;
+                case 'mid':
+                    $confidence_class = 'mid-confidence';
+                    break;
+                case 'low':
+                    $confidence_class = 'low-confidence';
+                    break;
+                default:
+                    $confidence_class = ''; 
+            }
+            echo "<div class='item-wrapper $confidence_class'><p class='item-content'>" .$display['content'] . "</p></div>";
         }
         ?>
 

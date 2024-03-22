@@ -33,15 +33,20 @@
         foreach ($data as $display){
             $confidence_class = '';
             switch ($display['confidence_level']) {
+                case 'very_high':
+                    $confidence_class = 'very-high-confidance';
+                    break;
                 case 'high':
                     $confidence_class = 'high-confidence';
                     break;
-                case 'mid':
-                    $confidence_class = 'mid-confidence';
+                case 'medium':
+                    $confidence_class = 'medium-confidence';
                     break;
                 case 'low':
                     $confidence_class = 'low-confidence';
                     break;
+                case 'very_low':
+                    $confidence_class = 'very-low-confidance';
                 default:
                     $confidence_class = ''; 
             }

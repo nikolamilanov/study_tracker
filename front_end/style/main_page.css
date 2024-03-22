@@ -20,5 +20,19 @@ main{
     width: 80%;
     margin: 0 0 0 5%;
     font-size: 30pt;
-
+}
+.very-high-confidance{
+    background-color: darkgreen;
+}
+.high-confidence{
+    background-color: #0c0c94;
+}
+.medium-confidence{
+    background-color: #b8b805;
+}
+.low-confidence{
+    background-color: #b9561c;
+}
+.very-low-confidence{
+    background-color: red;
 }

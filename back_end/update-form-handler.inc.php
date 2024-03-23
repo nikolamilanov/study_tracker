@@ -9,11 +9,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     try{
         require_once "data-base-handler.inc.php";
 
-        $sql = " UPDATE items SET content = ?, confidence_level = ? WHERE id = ?;";
+        $sql = " UPDATE items SET confidence_level = ?";
+
+        $parameters = array($confidenceLevel);
+        if (!empty($itemContent)){
+            $sql .= ", content = ?";
+            $parameters[] = $itemContent;
+        }
+        $parameters[] = $itemId;
+
+        $sql .= " WHERE id = ?;";
 
         $stmt = $pdo->prepare($sql);
 
-        $stmt->execute([$itemContent, $confidenceLevel, $itemId]);
+        $stmt->execute($parameters);
 
         $pdo = null;
         $stmt = null;

@@ -44,12 +44,13 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
 
         <label for="confidence-level">Confidence level</label><br>
         <select name="confidence-level" id="confidence-level">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
+            <option value="very_high">Very High</option>
             <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+            <option value="very_low">Very Low</option>
         </select>
 
-        <label for=""></label><br>
         <input type="submit">
     </form>
     <form class="update-form" method="post" action="../../back_end/update-form-handler.inc.php">
@@ -59,15 +60,17 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
         <select name="item_id" id="item_id">
             <?php
         foreach(new RecursiveArrayIterator($stmt1->fetchAll()) as $k=>$v) {
-            echo "<option value='" . $v['id'] . "'>" . $v['id'] ."</option>";
+            echo "<option value='" . $v['id'] . "'>" . $v['content'] ."</option>";
         }
         ?>
         </select><br>
         <label for="confidence-level">Confidence level</label><br>
         <select name="confidence-level" id="confidence-level">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
+            <option value="very_high">Very High</option>
             <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+            <option value="very_low">Very Low</option>
         </select> <br>
 
         <label for="content">Content</label><br>
@@ -82,7 +85,7 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
         <select name="item_id" id="item_id">
             <?php
         foreach(new RecursiveArrayIterator($stmt2->fetchAll()) as $k=>$v) {
-            echo "<option value='" . $v['id'] . "'>" . $v['id'] ."</option>";
+            echo "<option value='" . $v['id'] . "'>" . $v['content'] ."</option>";
         }
         ?>
         </select><br>

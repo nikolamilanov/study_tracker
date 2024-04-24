@@ -38,14 +38,24 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `content`, `confidence_level`) VALUES
-(11, '1', 'very_low'),
-(12, '2', 'high'),
-(13, '3', 'medium'),
-(14, '4', 'low'),
-(15, '5', 'very_low'),
-(17, 'bg', 'high'),
-(18, 'tema 13 sop', 'low'),
-(19, 'tema 18 veti', 'very_high');
+(20, 'Тема №1', 'very_high'),
+(21, 'Тема №2', 'very_high'),
+(22, 'Тема №3', 'very_high'),
+(23, 'Тема №4', 'very_high'),
+(24, 'Тема №5', 'high'),
+(25, 'Тема №6', 'high'),
+(26, 'Тема №7', 'high'),
+(27, 'Тема №8', 'very_high'),
+(28, 'Тема №9', 'very_high'),
+(29, 'Тема №10', 'low'),
+(30, 'Тема №11', 'high'),
+(31, 'Тема №12', 'medium'),
+(32, 'Тема №13', 'medium'),
+(33, 'Тема №14', 'very_high'),
+(34, 'Тема №15', 'high'),
+(35, 'Тема №16', 'medium'),
+(36, 'Тема №17', 'high'),
+(37, 'Тема №18', 'very_high');
 
 --
 -- Indexes for dumped tables

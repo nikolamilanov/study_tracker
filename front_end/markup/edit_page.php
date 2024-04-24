@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <h1>Title</h1>
+        <h1>Study Tracker</h1>
         <button class="edit-button" onclick="redirect()">Home</button>
     </header>
     <?php 
@@ -51,12 +51,12 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
             <option value="very_low">Very Low</option>
         </select>
 
-        <input type="submit">
+        <input type="submit" value="Confirm">
     </form>
     <form class="update-form" method="post" action="../../back_end/update-form-handler.inc.php">
         <h2>Update</h2>
 
-        <label for="item_id">ID</label><br>
+        <label for="item_id">Current Content</label><br>
         <select name="item_id" id="item_id">
             <?php
         foreach(new RecursiveArrayIterator($stmt1->fetchAll()) as $k=>$v) {
@@ -73,15 +73,15 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
             <option value="very_low">Very Low</option>
         </select> <br>
 
-        <label for="content">Content</label><br>
+        <label for="content">New Content</label><br>
         <input type="text" name="content" id="content"><br>
 
-        <input type="submit">
+        <input type="submit" value="Confirm">
     </form>
     <form class="delete-form" method="post" action="../../back_end/delete-form-handler.inc.php">
         <h2>Delete</h2>
 
-        <label for="item_id">ID</label><br>
+        <label for="item_id">Content</label><br>
         <select name="item_id" id="item_id">
             <?php
         foreach(new RecursiveArrayIterator($stmt2->fetchAll()) as $k=>$v) {
@@ -90,7 +90,7 @@ $result2 = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
         ?>
         </select><br>
 
-        <input type="submit">
+        <input type="submit" value="Confirm">
     </form>
 </body>
 

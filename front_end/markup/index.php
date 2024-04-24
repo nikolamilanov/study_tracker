@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <h1>Title</h1>
+        <h1>Study Tracker</h1>
         <button class="edit-button" onclick="redirect()">Edit</button>
     </header>
     <?php

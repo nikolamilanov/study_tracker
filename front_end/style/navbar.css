@@ -9,13 +9,22 @@ header{
 }
 header h1{
     color: white;
-    margin: 0;
+    margin: 5px 0 0 0;
+    height: 40px;
+    
 }
 header .edit-button{
     background-color: #0088b5;
     width: 15%;
     height: 30px;
+    margin-top: 10px;
     border: none;
     border-radius: 20px;
+    font-size: 11pt;
+    font-weight: 500;
+}
+header .edit-button:hover{
+    background-color: #187493;
+    color: white;
     cursor: pointer;
 }

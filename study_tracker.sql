@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2024 at 11:44 AM
+-- Generation Time: Aug 13, 2024 at 04:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,24 +38,17 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `content`, `confidence_level`) VALUES
-(20, 'Тема №1', 'very_high'),
-(21, 'Тема №2', 'very_high'),
-(22, 'Тема №3', 'very_high'),
-(23, 'Тема №4', 'very_high'),
-(24, 'Тема №5', 'high'),
-(25, 'Тема №6', 'high'),
-(26, 'Тема №7', 'high'),
-(27, 'Тема №8', 'very_high'),
-(28, 'Тема №9', 'very_high'),
-(29, 'Тема №10', 'low'),
-(30, 'Тема №11', 'high'),
-(31, 'Тема №12', 'medium'),
-(32, 'Тема №13', 'medium'),
-(33, 'Тема №14', 'very_high'),
-(34, 'Тема №15', 'high'),
-(35, 'Тема №16', 'medium'),
-(36, 'Тема №17', 'high'),
-(37, 'Тема №18', 'very_high');
+(1, 'Study Topic 1', 'very_high'),
+(2, 'Study Topic  2', 'very_high'),
+(3, 'Study Topic 3', 'high'),
+(4, 'Study Topic 4', 'medium'),
+(5, 'Study Topic 5', 'very_high'),
+(6, 'Study Topic 6', 'very_low'),
+(7, 'Study Topic 7', 'very_high'),
+(8, 'Study Topic 8', 'very_low'),
+(9, 'Study Topic  9', 'low'),
+(10, 'Study Topic  10', 'high'),
+(11, 'Study Topic 11', 'high');
 
 --
 -- Indexes for dumped tables
@@ -75,7 +68,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
